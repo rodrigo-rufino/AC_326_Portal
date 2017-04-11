@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2017-02-26" view-index="0" gantt-divider-location="428" resource-divider-location="341" version="2.8.4" locale="pt_BR">
+    <description/>
+    <view zooming-state="default:7" id="gantt-chart">
+        <field id="tpd3" name="Nome" width="242" order="0"/>
+        <field id="tpd4" name="Data inicial" width="71" order="1"/>
+        <field id="tpd5" name="Data final" width="96" order="2"/>
+    </view>
+    <view id="resource-table">
+        <field id="0" name="Nome" width="230" order="0"/>
+        <field id="1" name="Função" width="107" order="1"/>
+    </view>
+    <!-- -->
+    <calendars>
+        <day-types>
+            <day-type id="0"/>
+            <day-type id="1"/>
+            <default-week id="1" name="default" sun="1" mon="0" tue="0" wed="0" thu="0" fri="0" sat="1"/>
+            <only-show-weekends value="false"/>
+            <overriden-day-types/>
+            <days/>
+        </day-types>
+    </calendars>
+    <tasks empty-milestones="true">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
+        </taskproperties>
+        <task id="0" name="Task 0" color="#000000" meeting="false" start="2017-03-07" duration="72" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="false">
+            <task id="1" name="Portal" color="#000000" meeting="false" start="2017-03-07" duration="72" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="false">
+                <task id="2" name="Documento" color="#000000" meeting="false" start="2017-03-07" duration="71" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="false">
+                    <task id="3" name="Hardware" color="#000000" meeting="false" start="2017-04-11" duration="36" complete="0" expand="false" cost-manual-value="0.0" cost-calculated="false">
+                        <task id="4" name="Projeto da fonte" color="#8cb6ce" meeting="false" start="2017-04-11" duration="30" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="false"/>
+                        <task id="5" name="Lista de componentes" color="#8cb6ce" meeting="false" start="2017-04-11" duration="30" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="false"/>
+                        <task id="6" name="Especificações  (Microcontrolador e módulo bluetooth)" color="#8cb6ce" meeting="false" start="2017-05-10" duration="15" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="false"/>
+                    </task>
+                    <task id="8" name="Software" color="#000000" meeting="false" start="2017-03-07" duration="71" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="false">
+                        <task id="9" name="Firmware" color="#8cb6ce" meeting="false" start="2017-04-10" duration="23" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="false"/>
+                        <task id="10" name="Diagrama de Classes" color="#8cb6ce" meeting="false" start="2017-04-20" duration="22" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="false"/>
+                        <task id="11" name="Modelo do banco de dados" color="#8cb6ce" meeting="false" start="2017-04-10" duration="5" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="false"/>
+                        <task id="12" name="Diagrama de telas" color="#8cb6ce" meeting="false" start="2017-03-14" duration="6" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="false"/>
+                        <task id="13" name="Diagrama em blocos" color="#8cb6ce" meeting="false" start="2017-03-07" duration="6" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="false"/>
+                        <task id="14" name="Software do aplicativo" color="#8cb6ce" meeting="false" start="2017-04-10" duration="47" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="false"/>
+                        <task id="15" name="Comunicação bluetooth" color="#8cb6ce" meeting="false" start="2017-04-10" duration="15" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="false"/>
+                    </task>
+                </task>
+                <task id="16" name="Aplicativo" color="#000000" meeting="false" start="2017-04-10" duration="47" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="false">
+                    <task id="17" name="Bando de Dados" color="#000000" meeting="false" start="2017-04-10" duration="47" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="false">
+                        <task id="18" name="Estudo" color="#8cb6ce" meeting="false" start="2017-04-10" duration="47" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="false"/>
+                        <task id="19" name="Modelagem" color="#8cb6ce" meeting="false" start="2017-04-10" duration="5" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="false"/>
+                        <task id="20" name="Implementação" color="#8cb6ce" meeting="false" start="2017-04-17" duration="25" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="false"/>
+                    </task>
+                    <task id="21" name="Usuário" color="#000000" meeting="false" start="2017-04-10" duration="37" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="false">
+                        <task id="23" name="Abertura de portas" color="#8cb6ce" meeting="false" start="2017-04-10" duration="37" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="false">
+                            <task id="55" name="Listagem de portas" color="#8cb6ce" meeting="false" start="2017-04-10" duration="37" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="false"/>
+                        </task>
+                    </task>
+                    <task id="24" name="Administrador" color="#000000" meeting="false" start="2017-04-10" duration="47" complete="0" expand="false" cost-manual-value="0.0" cost-calculated="false">
+                        <task id="25" name="Login" color="#8cb6ce" meeting="false" start="2017-04-10" duration="47" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="false"/>
+                        <task id="27" name="Permissão de usuários" color="#8cb6ce" meeting="false" start="2017-04-10" duration="35" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="false">
+                            <task id="56" name="Lista de usuários" color="#8cb6ce" meeting="false" start="2017-04-10" duration="35" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="false"/>
+                        </task>
+                        <task id="28" name="Adição e remoção" color="#8cb6ce" meeting="false" start="2017-04-10" duration="1" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="false"/>
+                    </task>
+                    <task id="45" name="Projeto dos drivers relé" color="#8cb6ce" meeting="false" start="2017-04-11" duration="22" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="false"/>
+                </task>
+                <task id="29" name="Microcontrolador" color="#000000" meeting="false" start="2017-03-28" duration="57" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="false">
+                    <task id="30" name="Fonte" color="#000000" meeting="false" start="2017-04-11" duration="30" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="false">
+                        <task id="31" name="Projeto" color="#8cb6ce" meeting="false" start="2017-04-11" duration="24" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="false"/>
+                        <task id="32" name="Componentes" color="#8cb6ce" meeting="false" start="2017-04-11" duration="24" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="false"/>
+                        <task id="33" name="Especificações" color="#8cb6ce" meeting="false" start="2017-04-11" duration="24" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="false"/>
+                        <task id="34" name="Confecção" color="#8cb6ce" meeting="false" start="2017-05-15" duration="6" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="false"/>
+                    </task>
+                    <task id="35" name="Bluetooth" color="#000000" meeting="false" start="2017-03-28" duration="57" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="false">
+                        <task id="36" name="Aquisição do módulo" color="#8cb6ce" meeting="false" start="2017-03-28" duration="57" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="false"/>
+                        <task id="37" name="Instalação" color="#8cb6ce" meeting="false" start="2017-04-10" duration="48" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="false"/>
+                        <task id="38" name="Estudo" color="#8cb6ce" meeting="false" start="2017-04-10" duration="15" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="false"/>
+                    </task>
+                    <task id="39" name="Firmware" color="#000000" meeting="false" start="2017-04-10" duration="23" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="false">
+                        <task id="40" name="Planejamento" color="#8cb6ce" meeting="false" start="2017-04-10" duration="9" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="false"/>
+                        <task id="41" name="Código do bluetooth" color="#8cb6ce" meeting="false" start="2017-04-20" duration="7" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="false"/>
+                        <task id="42" name="Código de I/O" color="#8cb6ce" meeting="false" start="2017-04-20" duration="15" complete="0" expand="true" cost-manual-value="0.0" cost-calculated="false"/>
+                    </task>
+                </task>
+            </task>
+        </task>
+    </tasks>
+    <resources>
+        <resource id="0" name="Jonathan" function="Default:1" contacts="" phone=""/>
+        <resource id="1" name="Pedro" function="Default:1" contacts="" phone=""/>
+        <resource id="2" name="Rodrigo" function="Default:1" contacts="" phone=""/>
+    </resources>
+    <allocations>
+        <allocation task-id="30" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="35" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="39" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="31" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="32" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="33" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="34" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="36" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="37" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="38" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="41" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="40" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="42" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="3" resource-id="0" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="8" resource-id="0" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="17" resource-id="1" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="45" resource-id="1" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="39" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="34" resource-id="1" function="Default:1" responsible="false" load="100.0"/>
+        <allocation task-id="40" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="41" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="42" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="18" resource-id="1" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="19" resource-id="1" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="20" resource-id="1" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="3" resource-id="1" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="8" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="21" resource-id="2" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="24" resource-id="2" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="39" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="55" resource-id="2" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="23" resource-id="2" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="25" resource-id="2" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="28" resource-id="2" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="34" resource-id="2" function="Default:1" responsible="false" load="100.0"/>
+        <allocation task-id="40" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="41" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="42" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="3" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="8" resource-id="2" function="Default:1" responsible="true" load="100.0"/>
+    </allocations>
+    <vacations/>
+    <previous/>
+    <roles roleset-name="Default"/>
+</project>
