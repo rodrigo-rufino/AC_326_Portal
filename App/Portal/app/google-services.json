@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1039393308582",
+    "firebase_url": "https://portal-49597.firebaseio.com",
+    "project_id": "portal-49597",
+    "storage_bucket": "portal-49597.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1039393308582:android:ddd6399a0b849721",
+        "android_client_info": {
+          "package_name": "com.example.rodri.portal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1039393308582-dd16gnb1187runpuar28nnso9ivuilo7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIO3nLbaqNETPCN1bykIkwKfW8p-i-9ns"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
