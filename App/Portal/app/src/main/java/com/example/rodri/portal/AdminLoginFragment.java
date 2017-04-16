@@ -37,14 +37,14 @@ public class AdminLoginFragment extends Fragment {
                 String login = loginEditText.getText().toString();
                 String password = passwordEditText.getText().toString();
 
-                if (login.compareTo("admin")==0 && password.compareTo("admin")==0){
+ /*               if (login.compareTo("admin")==0 && password.compareTo("admin")==0){*/
                     final FragmentTransaction ft = getFragmentManager().beginTransaction();
                     ft.replace(R.id.container_admin, new AdminFragment());
                     ft.commit();
                     Toast.makeText(getActivity(), "Successful Login.", Toast.LENGTH_SHORT).show();
-                } else {
+               /* } else {
                     Toast.makeText(getActivity(), "Fail.", Toast.LENGTH_SHORT).show();
-                }
+                }*/
             }
         });
         return rootView;
