@@ -9,7 +9,7 @@ import java.util.List;
 public class User {
     public String username;
     public String mac;
-    public String[] myStringArray;
+    public List<String> portals;
 
     public User(){
     }
@@ -35,12 +35,18 @@ public class User {
         this.mac = mac;
     }
 
-    public String[] getMyStringArray() {
-        return myStringArray;
+    public List<String> getPortals() {
+        return portals;
     }
 
-    public void setMyStringArray(String[] myStringArray) {
-        this.myStringArray = myStringArray;
+    public void setPortals(List<String> portals) {
+        this.portals = portals;
+    }
+
+    @Override
+    public String toString() {
+        String s = getUsername() + " " + getMac() + " " + getPortals();
+        return s;
     }
 }
 
