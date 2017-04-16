@@ -2,4 +2,6 @@
     <string name="app_name">Portal</string>
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
+    <string name="string_about_portal">About Portal</string>
+    <string name="version">v0.1</string>
 </resources>

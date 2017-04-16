@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="30dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="6"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/door_name_text_view"
+            android:text="Door Name"
+            android:textSize="25dp"
+            android:layout_weight="4"
+            android:paddingLeft="20dp"/>
+        <Switch
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/door_switch"
+            android:layout_gravity="end"
+            android:layout_weight="2"/>
+    </LinearLayout>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:text="Ok"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/colorPrimary"
+        android:id="@+id/ok_door_control_button"/>
+
+</LinearLayout>

@@ -2,6 +2,7 @@ package com.example.rodri.portal;
 
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,14 +28,14 @@ import java.util.List;
 public class AdminFragment extends Fragment{
 
     private DatabaseReference mDatabaseRef;
-    private ArrayAdapter<String> listAdapter;
     private ArrayList<User> users = new ArrayList<>();
     private List<String> portals;
     private ListView listView;
     private CustomAdapter customAdapter;
+    private String macAddress;
+    private String deviceModel;
 
     LayoutInflater inflater;
-
 
     private View view;
 
@@ -53,13 +54,13 @@ public class AdminFragment extends Fragment{
     private EditText usernameAddEditText;
     private EditText macAddEditText;
     private Button addUserButton;
+    private Button thisDeviceButton;
     private CheckBox door0AddCheckBox;
     private CheckBox door1AddCheckBox;
     private CheckBox door2AddCheckBox;
 
     public static AdminFragment newInstance() {
         AdminFragment fragment = new AdminFragment();
-
         return fragment;
     }
 
@@ -69,6 +70,10 @@ public class AdminFragment extends Fragment{
         this.inflater = inflater;
         view = inflater.inflate(R.layout.fragment_admin, container, false);
         Button addButton = (Button) view.findViewById(R.id.add_button);
+        Button logoffButton = (Button) view.findViewById(R.id.logoff_button);
+
+        macAddress = android.provider.Settings.Secure.getString(getContext().getContentResolver(), "bluetooth_address");
+        deviceModel = android.os.Build.MODEL;
 
         listView = (ListView) view.findViewById(R.id.user_list);
         portals = new ArrayList<>();
@@ -86,6 +91,14 @@ public class AdminFragment extends Fragment{
             }
         });
 
+        logoffButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.container_admin, new AdminLoginFragment());
+                ft.commit();
+            }
+        });
         return view;
     }
 
@@ -97,14 +110,11 @@ public class AdminFragment extends Fragment{
         usernameAddEditText = (EditText) addDialogView.findViewById(R.id.username_edit_text);
         macAddEditText = (EditText) addDialogView.findViewById(R.id.mac_edit_text);
         addUserButton = (Button) addDialogView.findViewById(R.id.add_user_button);
+        thisDeviceButton = (Button) addDialogView.findViewById(R.id.add_this_device);
         door0AddCheckBox = (CheckBox) addDialogView.findViewById(R.id.door0_check_box);
         door1AddCheckBox = (CheckBox) addDialogView.findViewById(R.id.door1_check_box);
         door2AddCheckBox = (CheckBox) addDialogView.findViewById(R.id.door2_check_box);
-
-        portals.clear();
-        portals.add("0");
-        portals.add("0");
-        portals.add("0");
+        portals = new ArrayList<>();
 
         addDialogBuilder.setView(addDialogView);
         addUserDialog = addDialogBuilder.create();
@@ -116,20 +126,40 @@ public class AdminFragment extends Fragment{
             public void onClick(View v) {
                 String username = usernameAddEditText.getText().toString();
                 String mac = macAddEditText.getText().toString();
-                if (door0AddCheckBox.isChecked()) portals.set(0, "1");
-                if (door1AddCheckBox.isChecked()) portals.set(1, "1");
-                if (door2AddCheckBox.isChecked()) portals.set(2, "1");
+                portals.clear();
 
-                if(username.compareTo("")!= 0){
+                if (door0AddCheckBox.isChecked()) portals.add("Door 0");
+                if (door1AddCheckBox.isChecked()) portals.add("Door 1");
+                if (door2AddCheckBox.isChecked()) portals.add("Door 2");
+
+                boolean macExist = false;
+
+                if(!users.isEmpty()){
+                    for(User i : users){
+                        if (i.getMac().compareTo(mac) == 0) macExist = true;
+                    }
+                }
+
+                if(username.compareTo("") == 0) {
+                    Toast.makeText(getActivity(), "Enter with a valid Username.", Toast.LENGTH_SHORT).show();
+                } else if (macExist){
+                    Toast.makeText(getActivity(), "MAC already exists.", Toast.LENGTH_SHORT).show();
+                } else {
                     User user = new User(username, mac);
                     user.setUsername(username);
                     user.setMac(mac);
                     user.setPortals(portals);
                     mDatabaseRef.child("users").child(mac).setValue(user);
                     addUserDialog.cancel();
-                } else {
-                    Toast.makeText(getActivity(), "Enter with a valid Username", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+
+        thisDeviceButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                usernameAddEditText.setText(deviceModel);
+                macAddEditText.setText(macAddress);
             }
         });
     }
@@ -139,10 +169,8 @@ public class AdminFragment extends Fragment{
             @Override
             public void onDataChange(DataSnapshot snapshot) {
                 users.clear();
-                System.out.println(snapshot.getValue());  //prints "Do you have data? You'll love Firebase."
                 for (DataSnapshot userSnapshot: snapshot.getChildren()) {
                     User user = userSnapshot.getValue(User.class);
-                    System.out.println(user.getUsername());
                     users.add(user);
                 }
                 if(getActivity()!=null){
@@ -166,7 +194,7 @@ public class AdminFragment extends Fragment{
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                View editDialogView = inflater.inflate(R.layout.dialog_edit_user, null);;
+                View editDialogView = inflater.inflate(R.layout.dialog_edit_user, null);
                 final User user = customAdapter.getItem(position);
 
                 editDialogBuilder = new AlertDialog.Builder(getContext());
@@ -182,9 +210,18 @@ public class AdminFragment extends Fragment{
                 usernameEditEditText.setText(user.getUsername());
                 macEditEditText.setText(user.getMac());
 
-                if(user.getPortals().get(0) == "1") door0EditCheckBox.setChecked(true);
-                if(user.getPortals().get(1) == "1") door1EditCheckBox.setChecked(true);
-                if(user.getPortals().get(2) == "1") door2EditCheckBox.setChecked(true);
+                if(user.getPortals() == null){
+                    door0EditCheckBox.setChecked(false);
+                    door1EditCheckBox.setChecked(false);
+                    door2EditCheckBox.setChecked(false);
+                }else{
+                    for(String portal : user.getPortals()){
+                        System.out.println(portal);
+                        if(portal.compareTo("Door 0") == 0) door0EditCheckBox.setChecked(true);
+                        else if(portal.compareTo("Door 1") == 0) door1EditCheckBox.setChecked(true);
+                        else if(portal.compareTo("Door 2") == 0) door2EditCheckBox.setChecked(true);
+                    }
+                }
 
                 editDialogBuilder.setView(editDialogView);
                 editUserDialog = editDialogBuilder.create();
@@ -198,13 +235,11 @@ public class AdminFragment extends Fragment{
                         String newUsername = usernameEditEditText.getText().toString();
                         String newMac = macEditEditText.getText().toString();
                         List<String> newPortals = new ArrayList<String>();
-                        newPortals.add("0");
-                        newPortals.add("0");
-                        newPortals.add("0");
+                        newPortals.clear();
 
-                        if (door0EditCheckBox.isChecked()) newPortals.set(0, "1");
-                        if (door1EditCheckBox.isChecked()) newPortals.set(1, "1");
-                        if (door2EditCheckBox.isChecked()) newPortals.set(2, "1");
+                        if (door0EditCheckBox.isChecked()) newPortals.add("Door 0");
+                        if (door1EditCheckBox.isChecked()) newPortals.add("Door 1");
+                        if (door2EditCheckBox.isChecked()) newPortals.add("Door 2");
 
                         if(newUsername.compareTo("")!= 0){
                             mDatabaseRef.child("users").child(user.getMac()).removeValue();

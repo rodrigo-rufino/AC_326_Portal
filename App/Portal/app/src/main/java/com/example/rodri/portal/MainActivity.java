@@ -1,8 +1,10 @@
 package com.example.rodri.portal;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -45,6 +47,21 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.action_settings) {
+            new AlertDialog.Builder(this)
+                    .setTitle(R.string.string_about_portal)
+                    .setMessage("The team:\n\n" +
+                            "Jonathan Brendon Eugênio\n" +
+                            "Pedro Henrique Moreira Pereira\n" +
+                            "Rodrigo Rufino Ribeiro\n\n\n\n" +
+                            "Advisor:\n"+
+                            "Ana Letícia\n\n\n\n" +
+                            "Version: " + getResources().getString(R.string.version))
+                    .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            // continue with delete
+                        }
+                    })
+                    .show();
             return true;
         }
         return super.onOptionsItemSelected(item);
