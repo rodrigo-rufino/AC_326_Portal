@@ -129,10 +129,6 @@ public class UserFragment extends Fragment {
                             });
                         }
                     }
-                } else {
-                    macAddressTextView.setText(macAddress);
-                    usernameTextView.setText("Device without permissions.");
-                    doorListAdapter.clear();
                 }
             }
             @Override

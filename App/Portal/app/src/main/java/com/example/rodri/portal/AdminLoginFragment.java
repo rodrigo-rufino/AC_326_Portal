@@ -33,6 +33,8 @@ public class AdminLoginFragment extends Fragment {
     String password;
     EditText loginEditText;
     EditText passwordEditText;
+    Button loginButton;
+    Button changePasswordButton;
     private AlertDialog changePasswordDialog;
     private AlertDialog.Builder changePasswordDialogBuilder;
     LayoutInflater inflater;
@@ -55,8 +57,10 @@ public class AdminLoginFragment extends Fragment {
         loginEditText = (EditText) rootView.findViewById(R.id.admin_login_edittext);
         passwordEditText = (EditText) rootView.findViewById(R.id.admin_password_edittext);
 
-        Button loginButton = (Button) rootView.findViewById(R.id.button);
-        Button changePasswordButton = (Button) rootView.findViewById(R.id.change_password_button);
+        loginButton = (Button) rootView.findViewById(R.id.button);
+        changePasswordButton = (Button) rootView.findViewById(R.id.change_password_button);
+        loginButton.setEnabled(false);
+        changePasswordButton.setEnabled(false);
 
         mDatabaseRef = FirebaseDatabase.getInstance().getReference();
 
@@ -131,6 +135,8 @@ public class AdminLoginFragment extends Fragment {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
                 if(snapshot.exists()){
+                    loginButton.setEnabled(true);
+                    changePasswordButton.setEnabled(true);
                     correctLogin = snapshot.child("login").getValue().toString();
                     correctPassword = snapshot.child("password").getValue().toString();
                 }
