@@ -24,7 +24,9 @@
         android:layout_below="@+id/add_button"
         android:padding="10dp"
         android:divider="@color/transparent"
-        android:dividerHeight="10dp"/>
+        android:dividerHeight="10dp"
+        android:scrollbars="vertical"
+        android:scrollbarAlwaysDrawVerticalTrack="true"/>
 
     <Button
         android:id="@+id/add_button"

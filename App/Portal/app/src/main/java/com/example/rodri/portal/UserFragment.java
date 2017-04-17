@@ -50,8 +50,9 @@ public class UserFragment extends Fragment {
 
         macAddressTextView = (TextView) view.findViewById(R.id.user_mac_text_view);
         usernameTextView = (TextView) view.findViewById(R.id.user_username_text_view);
-        macAddressTextView.setText("MAC: ");
-        usernameTextView.setText("Username :");
+
+        macAddressTextView.setText(macAddress);
+        usernameTextView.setText("Device without permissions.");
         updateUserList();
         doorControl();
 
@@ -128,6 +129,10 @@ public class UserFragment extends Fragment {
                             });
                         }
                     }
+                } else {
+                    macAddressTextView.setText(macAddress);
+                    usernameTextView.setText("Device without permissions.");
+                    doorListAdapter.clear();
                 }
             }
             @Override

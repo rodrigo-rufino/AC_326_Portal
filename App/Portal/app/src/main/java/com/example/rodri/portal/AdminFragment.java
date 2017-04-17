@@ -150,6 +150,7 @@ public class AdminFragment extends Fragment{
                     user.setMac(mac);
                     user.setPortals(portals);
                     mDatabaseRef.child("users").child(mac).setValue(user);
+                    mDatabaseRef.child("users");
                     addUserDialog.cancel();
                 }
             }
@@ -214,7 +215,7 @@ public class AdminFragment extends Fragment{
                     door0EditCheckBox.setChecked(false);
                     door1EditCheckBox.setChecked(false);
                     door2EditCheckBox.setChecked(false);
-                }else{
+                } else {
                     for(String portal : user.getPortals()){
                         System.out.println(portal);
                         if(portal.compareTo("Door 0") == 0) door0EditCheckBox.setChecked(true);
@@ -247,6 +248,7 @@ public class AdminFragment extends Fragment{
                             user.setMac(newMac);
                             user.setPortals(newPortals);
                             mDatabaseRef.child("users").child(newMac).setValue(user);
+                            mDatabaseRef.child("users");
                             editUserDialog.cancel();
                         } else {
                             Toast.makeText(getActivity(), "Enter with a valid Username", Toast.LENGTH_SHORT).show();
