@@ -1,6 +1,11 @@
 # AC_326_Portal
 
 ### Tutoriais
+
+* Formatar arquivo github
+
+https://help.github.com/articles/basic-writing-and-formatting-syntax/#paragraphs-and-line-breaks
+
 * Arduino
 
 http://www.instructables.com/id/Android-Bluetooth-Control-LED-Part-2/
