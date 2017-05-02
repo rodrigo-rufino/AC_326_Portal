@@ -118,9 +118,11 @@ public class AdminLoginFragment extends Fragment {
             public void onClick(View v) {
                 String newLogin = newLoginEditText.getText().toString();
                 String newPassword = newPasswordEditText.getText().toString();
-
+                
+                mDatabaseRef.child("admin").removeValue();
                 mDatabaseRef.child("admin").child("login").setValue(newLogin);
                 mDatabaseRef.child("admin").child("password").setValue(newPassword);
+                
                 loginEditText.setText("");
                 passwordEditText.setText("");
                 changePasswordDialog.cancel();
