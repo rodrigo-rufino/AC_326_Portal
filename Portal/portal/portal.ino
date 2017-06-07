@@ -11,6 +11,7 @@ HC-06 VCC - Due 3.3V
 */
 #define HC06 Serial3
 
+int onInterval = 2000;
 int p0 = 49;
 int p1 = 51;
 int p2 = 53;
@@ -35,24 +36,27 @@ void loop()
     Serial.write(data);
     HC06.write(data);
     if(data == '0'){
-      Serial.write("Porta 0");
       digitalWrite(p0, HIGH);
-      delay(1000);
+      Serial.println("\nPorta 0 - On");
+      delay(onInterval);
       digitalWrite(p0, LOW);
+      Serial.println("\nPorta 0 - Off");
     }
 
     if(data == '1'){
-      Serial.write("Porta 1");
       digitalWrite(p1, HIGH);
-      delay(1000);
+      Serial.println("\nPorta 1 - On");
+      delay(onInterval);
       digitalWrite(p1, LOW);
+      Serial.println("\nPorta 1 - Off");
     }
 
     if(data == '2'){
-      Serial.write("Porta 2");
+      Serial.println("\nPorta 2 - On\n");
       digitalWrite(p2, HIGH);
-      delay(1000);
+      delay(onInterval);
       digitalWrite(p2, LOW);
+      Serial.println("\nPorta 2 - Off");
     }
   }
 }

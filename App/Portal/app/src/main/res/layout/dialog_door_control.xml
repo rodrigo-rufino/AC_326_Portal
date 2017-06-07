@@ -17,11 +17,15 @@
             android:textSize="25dp"
             android:layout_weight="4"
             android:paddingLeft="20dp"/>
-        <Switch
-            android:layout_width="0dp"
+        <Button
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/door_switch"
             android:layout_gravity="end"
+            android:text="Open Door"
+            android:padding="10dp"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/colorPrimary"
+            android:id="@+id/door_switch"
             android:layout_weight="2"/>
     </LinearLayout>
     <Button
